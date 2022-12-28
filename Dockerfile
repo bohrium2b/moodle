@@ -13,16 +13,12 @@ RUN apt-get update && \
     build-essential \
     ca-certificates \
     curl \
-    htop \
     locales \
     man \
     python3 \
-    python3-pip \
     software-properties-common \
     sudo \
     unzip \
-    vim \
-    emacs \
     wget &&\
     add-apt-repository ppa:git-core/ppa && \ 
     DEBIAN_FRONTEND='noninteractive' apt-get install -y git && \
@@ -37,6 +33,6 @@ RUN apt-get update && apt-get install -y mysql-server mysql-client pwgen
 
 # Add apache php repos
 RUN apt-add-repository ppa:ondrej/php && apt-get update && apt-add-repository ppa:ondrej/apache2 && apt-get update && \
-    apt-get install php7.4 apache2 libapache2-mod-php php-mysql libcurl php-yaml php-defaults php-pear php-sodium php-redis php-xmlrpc 
+    apt-get install php7.4 apache2 libapache2-mod-php php-mysql php-yaml php-pear php-sodium php-redis php-xmlrpc 
 
 
