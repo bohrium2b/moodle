@@ -31,8 +31,10 @@ RUN apt-get install -y gcc make clang
 # Install mysql
 RUN apt-get update && apt-get install -y mysql-server mysql-client pwgen
 
-# Add apache php repos
+# Add apache php repos and packages lol
 RUN apt-add-repository ppa:ondrej/php && apt-get update && apt-add-repository ppa:ondrej/apache2 && apt-get update && \
     apt-get install -y php7.4 apache2 libapache2-mod-php php-mysql php-yaml php-pear php-sodium php-redis php-xmlrpc 
 
-
+RUN mkdir /moodledata
+RUN chmod 777 /moodledata
+RUN cd /moodledata && wget https://download.moodle.org/download.php/direct/stable401/moodle-latest-401.tgz && ls /moodledata && echo "unzipping now .." && tar -xvf moodle-latest-401.tgz /moodle -o /var/www/
