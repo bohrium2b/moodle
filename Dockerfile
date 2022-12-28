@@ -11,7 +11,7 @@ RUN apt-get install -y git curl unzip python3 python3-setuptools bash ca-certifi
 
 # Install locales
 RUN apt-get install -y locales && \
-    
+    locale-gen "en_US.UTF-8" && dpkg-reconfigure locales
 
 # Add gcc make clang
 RUN apt-get install -y gcc make clang
