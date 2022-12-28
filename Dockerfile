@@ -11,7 +11,7 @@ RUN add-apt-repository ppa:git-core/ppa  && apt-get update && \
     apt-get install -y curl unzip python3 python3-setuptools bash ca-certificates man build-essential
 
 # Install locales
-RUN apt-get install -y locales && \
+RUN apt-get update && apt-get install -y locales && \
     locale-gen "en_US.UTF-8" && dpkg-reconfigure locales
 
 # Add gcc make clang
