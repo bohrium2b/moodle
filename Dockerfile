@@ -8,7 +8,7 @@ RUN apt-get update && apt-get upgrade -y
 
 # Standard requirements stuff
 RUN add-apt-repository ppa:git-core/ppa  && apt-get update && \
-    apt-get install -y curl unzip python3 python3-setuptools bash ca-certificates man build-essential
+    apt-get install -y curl unzip python3 python3-setuptools bash ca-certificates man build-essential wget 
 
 # Install locales
 RUN apt-get update && apt-get install -y locales && \
