@@ -23,3 +23,5 @@ RUN apt-get update && apt-get install -y mysql-server mysql-client pwgen
 # Add apache php repos
 RUN apt-add-repository ppa:ondrej/php && apt-get update && apt-add-repository ppa:ondrej/apache2 && apt-get update && \
     apt-get install php7.4 && apache2 && libapache2-mod-php php-mysql
+
+
