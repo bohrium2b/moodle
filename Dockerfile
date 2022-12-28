@@ -12,3 +12,5 @@ RUN apt-get install -y git curl unzip python3 python3-setuptools bash ca-certifi
 # Install locales
 RUN apt-get install -y locales
 
+# Add gcc make clang
+RUN apt-get install -y gcc make clang
