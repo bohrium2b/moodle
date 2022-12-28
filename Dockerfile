@@ -17,5 +17,9 @@ RUN apt-get update && apt-get install -y locales && \
 # Add gcc make clang
 RUN apt-get install -y gcc make clang
 
+# Install mysql
+RUN apt-get update && apt-get install -y 
+
 # Add apache php repos
-RUN apt-add-repository ppa:ondrej/php && apt-get update && apt-add-repository ppa:ondrej/apache
+RUN apt-add-repository ppa:ondrej/php && apt-get update && apt-add-repository ppa:ondrej/apache2 && apt-get update && \
+    apt-get install php7.4 && apache2 && 
