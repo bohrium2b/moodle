@@ -4,7 +4,7 @@ FROM ubuntu:20.04
 ENV DEBIAN_FRONTEND noninteractive
 # Set utf8 otherwise AHHH!!!!! *screams and runs away*
 ENV LANG C.UTF-8
-RUN apt-get update -y && apt-get upgrade -y
+RUN apt-get update && apt-get upgrade -y
 
 # Standard requirements stuff
 RUN add-apt-repository ppa:git-core/ppa  && apt-get update && \
@@ -16,3 +16,6 @@ RUN apt-get install -y locales && \
 
 # Add gcc make clang
 RUN apt-get install -y gcc make clang
+
+# Add apache php repos
+RUN apt-add-repository ppa:ondrej/php && apt-get update 
