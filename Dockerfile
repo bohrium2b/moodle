@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y locales && \
 RUN apt-get install -y gcc make clang
 
 # Install mysql
-RUN apt-get update && apt-get install -y 
+RUN apt-get update && apt-get install -y mysql-server mysql-client
 
 # Add apache php repos
 RUN apt-add-repository ppa:ondrej/php && apt-get update && apt-add-repository ppa:ondrej/apache2 && apt-get update && \
