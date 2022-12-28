@@ -18,4 +18,4 @@ RUN apt-get update && apt-get install -y locales && \
 RUN apt-get install -y gcc make clang
 
 # Add apache php repos
-RUN apt-add-repository ppa:ondrej/php && apt-get update 
+RUN apt-add-repository ppa:ondrej/php && apt-get update && apt-get install php
