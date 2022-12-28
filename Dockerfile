@@ -7,8 +7,8 @@ ENV LANG C.UTF-8
 RUN apt-get update -y && apt-get upgrade -y
 
 # Standard requirements stuff
-RUN \
- apt-get install -y curl unzip python3 python3-setuptools bash ca-certificates man build-essential
+RUN add-apt-repository ppa:git-core/ppa  && apt-get update && \
+    apt-get install -y curl unzip python3 python3-setuptools bash ca-certificates man build-essential
 
 # Install locales
 RUN apt-get install -y locales && \
